@@ -18,6 +18,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
+        uses: actions/checkout@v2
         with:
           repository: xuelang7009/ssss
       - name: Use Node.js ${{ matrix.node-version }}
