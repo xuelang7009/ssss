@@ -6,7 +6,7 @@ name: jd_live_redrain 直播红包雨
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/5 */1 * * *'
   # watch:
   #       types: started
   repository_dispatch:
