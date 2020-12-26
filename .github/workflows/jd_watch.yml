@@ -4,7 +4,6 @@
 name: jd_watch 看一看
 
 on:
-  push:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'
