@@ -7,9 +7,9 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '*/04 * * * *'
-  # watch:
-  #       types: started
+    - cron: '*/4 * * * *'
+  watch:
+    types: started
   repository_dispatch:
     types: live_redrain
 jobs:
