@@ -28,6 +28,12 @@ inputs:
           cronExpression: "0 0 0 * * * *"
           enable: true
           argument: jd_blueCoin&jd_club_lottery&jd_car
+    - timer: #京东直播红包雨
+        parameters:
+          name: jd_live_redrain
+          cronExpression: "0 0 */1 * * * *"
+          enable: true
+          argument: jd_live_redrain
     - timer: # 东东农场# 东东萌宠
         parameters:
           name: jd_fruit_jd_pet
