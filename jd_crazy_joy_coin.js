@@ -199,7 +199,7 @@ async function jdJxStory() {
   $.coin = 0
   $.bean = 0
 
-  $.canBuy = true
+  $.canBuy = false
   await getJoyList()
   await $.wait(1000)
   await getJoyShop()
