@@ -31,8 +31,8 @@ const notify = $.isNode() ? require('../sendNotify') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const randomCount = 3;
 let cookiesArr = [], cookie = '', message = '';
-const inviteCodes = ['qSDHMwUOz7onHcMyaju4KmdSXWf0dlv7LVnTt1Wzemo=@iuGNoGYvk9YdEImUAz25Wyzm7oeggrm0JSIYgZdHJGI=', 'iuGNoGYvk9YdEImUAz25Wyzm7oeggrm0JSIYgZdHJGI='];
-const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const inviteCodes = ['zbED4WagF9QJOheso6TqR-70kPQhhHfLMHqg84oBH-k=@CkZBlqDfHqRETaHBCoalJ5ATcArPH5iZpFC7Ptm5mi4=@yR5j33gklLRL_gP2od7bPVNL-ua67t6NtvSpyzscDQ8=@BDop-Y9Gvgn7LXELz-L8FOWMOHurjZE45d8fOsZiafk=', 'mxiTxGABS9ZWuTFVMspBljJ53QoFH-8z7jQuXe0KGgA=@CkZBlqDfHqRETaHBCoalJ5ATcArPH5iZpFC7Ptm5mi4=@yR5j33gklLRL_gP2od7bPVNL-ua67t6NtvSpyzscDQ8=@BDop-Y9Gvgn7LXELz-L8FOWMOHurjZE45d8fOsZiafk='];
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
