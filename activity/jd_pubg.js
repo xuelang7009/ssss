@@ -8,17 +8,17 @@ PUBG ,运行时间会比较久,Surge请加大timeout时间
 ============Quantumultx===============
 [task_local]
 #PUBG
-10 0 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_pubg.js, tag=PUBG, enabled=true
+10 0 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_pubg.js, tag=PUBG, enabled=true
 
 ================Loon==============
 [Script]
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_pubg.js,tag=PUBG
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_pubg.js,tag=PUBG
 
 ===============Surge=================
-PUBG = type=cron,cronexp="10 0 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_pubg.js
+PUBG = type=cron,cronexp="10 0 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_pubg.js
 
 ============小火箭=========
-PUBG = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_pubg.js, cronexpr="10 0 * * *", timeout=200, enable=true
+PUBG = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_pubg.js, cronexpr="10 0 * * *", timeout=200, enable=true
  */
 const $ = new Env('PUBG');
 !function(n) {
@@ -178,7 +178,7 @@ const inviteCodes = ['65561ad5-af72-4d1c-a5be-37b3de372b67@2d5f579d-e6d1-479e-93
     })
 async function jdHealth() {
   $.bean = 0
-  // await helpFriends();
+  await helpFriends();
   await taskList();
   message += `已做完任务，共计获得京豆 ${$.bean}\n`
   await showMsg();
@@ -418,7 +418,7 @@ function taskUrl(function_id, body = {}) {
       'cache-control': 'no-cache',
       "origin": "https://starsingle.m.jd.com",
       'Content-Type': 'application/x-www-form-urlencoded',
-      'dnt': 1,
+      'dnt': '1',
       'pragma': 'no-cache',
       'referer': 'https://starsingle.m.jd.com/static/index.html',
       'timestamp': `${t}`,
@@ -441,7 +441,7 @@ function taskPostUrl(body = "{}", functionId = 'doTask') {
       'cache-control': 'no-cache',
       "origin": "https://starsingle.m.jd.com",
       'Content-Type': 'application/x-www-form-urlencoded',
-      'dnt': 1,
+      'dnt': '1',
       'pragma': 'no-cache',
       'referer': 'https://starsingle.m.jd.com/static/index.html',
       'timestamp': `${t}`,

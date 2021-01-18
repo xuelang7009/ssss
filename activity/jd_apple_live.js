@@ -8,17 +8,17 @@
 ============Quantumultx===============
 [task_local]
 #苹果抽奖机
-10 0 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_apple_live.js, tag=苹果抽奖机, enabled=true
+10 0 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_apple_live.js, tag=苹果抽奖机, enabled=true
 
 ================Loon==============
 [Script]
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_apple_live.js,tag=苹果抽奖机
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_apple_live.js,tag=苹果抽奖机
 
 ===============Surge=================
-苹果抽奖机 = type=cron,cronexp="10 0 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_apple_live.js
+苹果抽奖机 = type=cron,cronexp="10 0 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_apple_live.js
 
 ============小火箭=========
-苹果抽奖机 = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_apple_live.js, cronexpr="10 0 * * *", timeout=200, enable=true
+苹果抽奖机 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_apple_live.js, cronexpr="10 0 * * *", timeout=200, enable=true
  */
 const $ = new Env('苹果抽奖机');
 
@@ -44,7 +44,7 @@ if ($.isNode()) {
   cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [`P04z54XCjVUm4aW5m9cZ2SqiXwelxYL0hyAU-Y`, `P04z54XCjVUm4aW5nRNUzykgCoV11nq9Ok`];
+const inviteCodes = [`P04z54XCjVUm4aW5nJcXCCyoR8C6s-kRmWs@P04z54XCjVUm4aW5m9cZ2bx3y5Ow@P04z54XCjVUm4aW5u2ak7ZCdan1BeYMuZ9HwF34gJjW@P04z54XCjVUm4aW5m9cZ2T6jChKkkjZEdhiKUY`, `P04z54XCjVUm4aW5nJcXCCyoR8C6s-kRmWs@P04z54XCjVUm4aW5m9cZ2bx3y5Ow`];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {

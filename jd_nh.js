@@ -13,17 +13,17 @@
 ============Quantumultx===============
 [task_local]
 #京东年货节
-1 7 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_nh.js, tag=京东年货节, enabled=true
+1 7 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nh.js, tag=京东年货节, enabled=true
 
 ================Loon==============
 [Script]
-cron "1 7 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_nh.js,tag=京东年货节
+cron "1 7 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nh.js,tag=京东年货节
 
 ===============Surge=================
-京东年货节 = type=cron,cronexp="1 7 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_nh.js
+京东年货节 = type=cron,cronexp="1 7 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nh.js
 
 ============小火箭=========
-京东年货节 = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_nh.js, cronexpr="1 7 * * *", timeout=200, enable=true
+京东年货节 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nh.js, cronexpr="1 7 * * *", timeout=200, enable=true
  */
 const $ = new Env('京东年货节');
 
@@ -106,7 +106,7 @@ async function jdNh() {
 function getShareCode() {
   return new Promise(resolve => {
     $.get({url:'https://gitee.com/shylocks/updateTeam/raw/main/jd_nh.json',headers:{
-        'user-agent': 'Mozilla/5.0 (Linux; Android 9; NX563J Build/PKQ1.181021.001) AppleWebKit/537.36(KHTML,like Gecko)Version/4.0 Chrome/57.0.2987.108 Mobile Safari/537.36'
+        'user-agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)'
       }},(err,resp,data)=>{
       try {
         if (err) {
@@ -133,7 +133,7 @@ function getIsvToken() {
     headers: {
       'Host': 'api.m.jd.com',
       'accept': '*/*',
-      'user-agent': 'Mozilla/5.0 (Linux; Android 9; NX563J Build/PKQ1.181021.001) AppleWebKit/537.36(KHTML,like Gecko)Version/4.0 Chrome/57.0.2987.108 Mobile Safari/537.36)',
+      'user-agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
       'accept-language': 'zh-Hans-JP;q=1, en-JP;q=0.9, zh-Hant-TW;q=0.8, ja-JP;q=0.7, en-US;q=0.6',
       'content-type': 'application/x-www-form-urlencoded',
       'Cookie': cookie
@@ -166,7 +166,7 @@ function getIsvToken2() {
     headers: {
       'Host': 'api.m.jd.com',
       'accept': '*/*',
-      'user-agent': 'Mozilla/5.0 (Linux; Android 9; NX563J Build/PKQ1.181021.001) AppleWebKit/537.36(KHTML,like Gecko)Version/4.0 Chrome/57.0.2987.108 Mobile Safari/537.36',
+      'user-agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
       'accept-language': 'zh-Hans-JP;q=1, en-JP;q=0.9, zh-Hant-TW;q=0.8, ja-JP;q=0.7, en-US;q=0.6',
       'content-type': 'application/x-www-form-urlencoded',
       'Cookie': cookie
@@ -456,7 +456,7 @@ function taskUrl(function_id, body) {
       'Accept-Language': 'zh-cn',
       'Content-Type': 'application/json;charset=utf-8',
       'Origin': 'https://lzdz-isv.isvjcloud.com',
-      'User-Agent': 'Mozilla/5.0 (Linux; Android 9; NX563J Build/PKQ1.181021.001) AppleWebKit/537.36(KHTML,like Gecko)Version/4.0 Chrome/57.0.2987.108 Mobile Safari/537.36',
+      'User-Agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
       'Referer': `https://lzdz-isv.isvjcloud.com/dingzhi/book/develop/activity?activityId=${ACT_ID}`,
       'Cookie': `${cookie} IsvToken=${$.isvToken};`
     }
@@ -473,7 +473,7 @@ function taskPostUrl(function_id, body) {
       'Accept-Language': 'zh-cn',
       'Content-Type': 'application/x-www-form-urlencoded',
       'Origin': 'https://lzdz-isv.isvjcloud.com',
-      'User-Agent': 'Mozilla/5.0 (Linux; Android 9; NX563J Build/PKQ1.181021.001) AppleWebKit/537.36(KHTML,like Gecko)Version/4.0 Chrome/57.0.2987.108 Mobile Safari/537.36',
+      'User-Agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
       'Referer': `https://lzdz-isv.isvjcloud.com/dingzhi/book/develop/activity?activityId=${ACT_ID}`,
       'Cookie': `${cookie} isvToken=${$.isvToken};`
     }

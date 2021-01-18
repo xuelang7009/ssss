@@ -4,23 +4,23 @@
 共计25京豆，一天运行一次即可
 活动时间：2020-12-4 到 2020-12-11
 活动入口：https://prodev.m.jd.com/mall/active/nKxVyPnuLwAsQSTfidZ9z4RKVZy/index.html#/
-更新地址：https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_digital_floor.js
+更新地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_digital_floor.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #数码加购京豆
-10 7 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_digital_floor.js, tag=数码加购京豆, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=true
+10 7 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_digital_floor.js, tag=数码加购京豆, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "10 7 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_digital_floor.js, tag=数码加购京豆
+cron "10 7 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_digital_floor.js, tag=数码加购京豆
 
 ===============Surge=================
-数码加购京豆 = type=cron,cronexp="10 7 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_digital_floor.js
+数码加购京豆 = type=cron,cronexp="10 7 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_digital_floor.js
 
 ============小火箭=========
-数码加购京豆 = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_digital_floor.js, cronexpr="10 7 * * *", timeout=200, enable=true
+数码加购京豆 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_digital_floor.js, cronexpr="10 7 * * *", timeout=200, enable=true
  */
 const $ = new Env('数码加购京豆');
 
@@ -29,8 +29,7 @@ const notify = $.isNode() ? require('../sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const randomCount = $.isNode() ? 20 : 5;
-const inviteCodes = [`9cb57c2a-c300-4bd8-ad9d-83f4c891e9f8@3b060eec-6136-450f-ad33-f17cfe051fff@61e5fd62-832a-42b3-bde3-eff2556c4544@ae8a4e53-6117-4cdb-9bb4-2642da61144c@133e3206-2c08-4410-a8d6-85121d4eee1d
-`,'3b060eec-6136-450f-ad33-f17cfe051fff@9cb57c2a-c300-4bd8-ad9d-83f4c891e9f8@61e5fd62-832a-42b3-bde3-eff2556c4544@ae8a4e53-6117-4cdb-9bb4-2642da61144c@133e3206-2c08-4410-a8d6-85121d4eee1d'];
+const inviteCodes = [`40cd108f-9eed-4897-b795-45a5b221cd6b@49efb480-d6d7-456b-a4e0-14b170b161e0@`,'9d4262a5-1a02-4ae7-8a86-8d070d531464@687b14e0-ce0a-45eb-bf46-71aa0da05f18'];
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {

@@ -9,17 +9,17 @@
 ============Quantumultx===============
 [task_local]
 #京喜故事
-10 7 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_jxstory.js, tag=京喜故事, enabled=true
+10 7 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jxstory.js, tag=京喜故事, enabled=true
 
 ================Loon==============
 [Script]
-cron "10 7 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_jxstory.js,tag=京喜故事
+cron "10 7 * * *" script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jxstory.js,tag=京喜故事
 
 ===============Surge=================
-京喜故事 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_jxstory.js
+京喜故事 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jxstory.js
 
 ============小火箭=========
-京喜故事 = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_jxstory.js, cronexpr="10 * * * *", timeout=200, enable=true
+京喜故事 = type=cron,script-path=https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jxstory.js, cronexpr="10 * * * *", timeout=200, enable=true
 
  */
 
@@ -31,8 +31,8 @@ const notify = $.isNode() ? require('../sendNotify') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const randomCount = 3;
 let cookiesArr = [], cookie = '', message = '';
-const inviteCodes = ['zbED4WagF9QJOheso6TqR-70kPQhhHfLMHqg84oBH-k=@CkZBlqDfHqRETaHBCoalJ5ATcArPH5iZpFC7Ptm5mi4=@yR5j33gklLRL_gP2od7bPVNL-ua67t6NtvSpyzscDQ8=@BDop-Y9Gvgn7LXELz-L8FOWMOHurjZE45d8fOsZiafk=', 'mxiTxGABS9ZWuTFVMspBljJ53QoFH-8z7jQuXe0KGgA=@CkZBlqDfHqRETaHBCoalJ5ATcArPH5iZpFC7Ptm5mi4=@yR5j33gklLRL_gP2od7bPVNL-ua67t6NtvSpyzscDQ8=@BDop-Y9Gvgn7LXELz-L8FOWMOHurjZE45d8fOsZiafk='];
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const inviteCodes = ['qSDHMwUOz7onHcMyaju4KmdSXWf0dlv7LVnTt1Wzemo=@iuGNoGYvk9YdEImUAz25Wyzm7oeggrm0JSIYgZdHJGI=', 'iuGNoGYvk9YdEImUAz25Wyzm7oeggrm0JSIYgZdHJGI='];
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
