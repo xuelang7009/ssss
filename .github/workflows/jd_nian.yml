@@ -35,7 +35,7 @@ jobs:
       - name: '运行 【炸年兽】'
         run: |
           npm install
-          node jd_nianCollect.js
+          node jd_nian.js
 
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
