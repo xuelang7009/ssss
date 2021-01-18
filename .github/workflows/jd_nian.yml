@@ -10,7 +10,7 @@ on:
   # watch:
   #   types: [started]
   repository_dispatch:
-    types: crazy_joy_coin
+    types: jd_nian 年兽
 jobs:
   build:
 
