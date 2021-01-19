@@ -696,7 +696,11 @@
       ],
       "author": "@lxk0301",
       "repo": "https://github.com/lxk0301/jd_scripts",
+<<<<<<< HEAD
       "script": "https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_unsubscribe.js",
+=======
+      "script": "https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_unbind.js",
+>>>>>>> parent of 661a9d4... 20210118
       "icons": [
         "https://raw.githubusercontent.com/58xinian/icon/master/jd_unbind_mini.png",
         "https://raw.githubusercontent.com/58xinian/icon/master/jd_unbind.png"
