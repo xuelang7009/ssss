@@ -822,7 +822,7 @@ function readShareCode() {
   return new Promise(async resolve => {
     $.get({url: `https://code.chiang.fun/api/v1/jd/jdnian/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
       try {
-        if (err) {
+        if (false) {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
