@@ -27,7 +27,6 @@ jobs:
           node-version: 10.x
       - name: npm install
         run: |
-          cd ~/scripts
           npm install
       - name: '运行 【5G狂欢城】'
         run: |
