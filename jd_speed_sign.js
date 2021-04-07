@@ -749,7 +749,7 @@ function jsonParse(str) {
 
 // prettier-ignore
 function Env(t, e) {
-	lass s {
+	class s {
 		constructor(t) {
 			this.env = t
 		}
@@ -844,8 +844,7 @@ function Env(t, e) {
 				r = e && e.timeou t ? e.timeout: r;
 				const[o, h] = i.split("@"),
 				n = {
-					url: `http: //${h}/v1/scripting/evaluate`
-					,
+					url: `http: //${h}/v1/scripting/evaluate`,
 					body: {
 						script_text: t,
 						mock_type: "cron",
