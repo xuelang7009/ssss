@@ -784,10 +784,7 @@ function Env(t, e) {
 			this.logSeparator = "\n",
 			this.startTime = (new Date).getTime(),
 			Object.assign(this, e),
-			this.log("", `🔔$ {
-				this.name
-			},
-			开始 ! `)
+			this.log("", `🔔$ {this.name},开始 ! `)
 		}
 		isNode() {
 			return "undefined" != typeof module && !!module.exports
@@ -943,8 +940,7 @@ function Env(t, e) {
 		}
 		initGotEnv(t) {
 			this.got = this.got ? t his.got: require("got"),
-			this.cktough = this.cktough ? this.cktough: require("tough-coo
-kie"),
+			this.cktough = this.cktough ? this.cktough: require("tough-cookie"),
 			this.ckjar = this.ckjar ? this.ckjar: new this.cktough.CookieJar,
 			t && (t.headers = t.headers ? t.headers: {},
 			void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar))
@@ -953,8 +949,7 @@ kie"),
 			t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]),
 			this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {},
 			Object.assign(t.headers, {
-				"X-Surge-Skip-
-Scripting": !1
+				"X-Surge-Skip-Scripting": !1
 			})), $httpClient.get(t, (t, s, i) = >{ ! t && s && (s.body = i, s.statusCode = s.sta tus),
 				e(t, s, i)
 			})) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {},
@@ -1011,8 +1006,7 @@ Scripting": !1
 		post(t, e = (() = >{})) {
 			if (t.body && t.headers && !t.headers["Content-Type"] && (t.header s["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon()) this.isSurge() && this.i sNeedRewrite && (t.headers = t.headers || {},
 			Object.assign(t.headers, {
-				"X-Surge-Skip-Sc
-ripting": !1
+				"X-Surge-Skip-Scripting": !1
 			})),
 			$httpClient.post(t, (t, s, i) = >{ ! t && s && (s.body = i, s.statusCode = s.stat us),
 				e(t, s, i)
@@ -1075,8 +1069,7 @@ ripting": !1
 				"d+": s.getDate(),
 				"H+": s.getHours(),
 				"m+": s.getMinutes(),
-				"s
-+": s.getSeconds(),
+				"s+": s.getSeconds(),
 				"q+": Math.floor((s.getMonth() + 3) / 3),
 				S: s.getMilliseconds()
 			};
@@ -1133,13 +1126,7 @@ ripting": !1
 		}
 		logE rr(t, e) {
 			const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
-			s ? this.log("", `❗️$ {
-				this.name
-			},
-			错误 ! `, t.stack) : this.log("", `❗️$ {
-				this.name
-			},
-			错误 ! `, t)
+			s ? this.log("", `❗️$ {this.name},错误 ! `, t.stack) : this.log("", `❗️$ {this.name},错误 ! `, t)
 		}
 		wait(t) {
 			return new Promise(e = >setTimeout(e, t))
@@ -1147,12 +1134,7 @@ ripting": !1
 		done(t = {}) {
 			const e = (new Date).getTime(),
 			s = (e - this.startTime) / 1e3;
-			this.log("", `🔔$ {
-				this.name
-			},
-			结束 ! 🕛$ {
-				s
-			}秒`),
+			this.log("", `🔔$ {this.name},结束 ! 🕛$ {s}秒`),
 			this.log(),
 			(this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
 		}
