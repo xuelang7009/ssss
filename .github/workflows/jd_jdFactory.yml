@@ -30,7 +30,7 @@ jobs:
           npm install
       - name: '运行 【东东工厂】'
         run: |
-          node jd_jdFactory.js
+          node jd_jdfactory.js
         env:
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
