@@ -127,7 +127,7 @@ function getTaskDetail(taskId = '') {
           if (safeGet(data)) {
             data = $.toObj(data)
             if (taskId === -1) {
-              let tmp = parseInt(parseFloat(data.data.result.userScore ?? '0'))
+              let tmp = parseInt(parseFloat(data.data.result.userScore ? '0'))
               if (!$.earn) {
                 $.score = tmp
                 $.earn = 1
@@ -145,7 +145,7 @@ function getTaskDetail(taskId = '') {
               await doTask(data.data.result.taskVos[0].shoppingActivityVos[0].taskToken, 22, 1)//领取任务
               await $.wait(1000 * (data.data.result.taskVos[0].waitDuration || 3));
               await doTask(data.data.result.taskVos[0].shoppingActivityVos[0].taskToken, 22, 0);//完成任务
-            } else for (let vo of data.data.result.taskVos.filter(vo => vo.taskType !== 19) ?? []) {
+            } else for (let vo of data.data.result.taskVos.filter(vo => vo.taskType !== 19) ? []) {
               console.log(`${vo.taskName}任务，完成次数：${vo.times}/${vo.maxTimes}`)
               for (let i = vo.times; i < vo.maxTimes; ++i) {
                 console.log(`去完成${vo.taskName}任务`)
@@ -184,14 +184,14 @@ function doTask(taskToken, taskId, actionType = 0) {
         try {
           if (safeGet(data)) {
             data = $.toObj(data)
-            if ([0, 1].includes(data.data.bizCode ?? -1)) {
+            if ([0, 1].includes(data.data.bizCode ? -1)) {
               $.canDo = true
               if (data.data.result.score)
-                console.log(`任务完成成功，获得：${data.data.result.score ?? '未知'}能量`)
+                console.log(`任务完成成功，获得：${data.data.result.score ? '未知'}能量`)
               else
-                console.log(`任务领取结果：${data.data.bizMsg ?? JSON.stringify(data)}`)
+                console.log(`任务领取结果：${data.data.bizMsg ? JSON.stringify(data)}`)
             } else {
-              console.log(`任务完成失败：${data.data.bizMsg ?? JSON.stringify(data)}`)
+              console.log(`任务完成失败：${data.data.bizMsg ? JSON.stringify(data)}`)
             }
           }
         } catch (e) {
@@ -212,11 +212,11 @@ function collectScore() {
             data = $.toObj(data)
             if (data.data.bizCode === 0) {
               if (data.data.result.produceScore)
-                console.log(`任务完成成功，获得：${data.data.result.produceScore ?? '未知'}能量`)
+                console.log(`任务完成成功，获得：${data.data.result.produceScore ? '未知'}能量`)
               else
-                console.log(`任务领取结果：${data.data.bizMsg ?? JSON.stringify(data)}`)
+                console.log(`任务领取结果：${data.data.bizMsg ? JSON.stringify(data)}`)
             } else {
-              console.log(`任务完成失败：${data.data.bizMsg ?? JSON.stringify(data)}`)
+              console.log(`任务完成失败：${data.data.bizMsg ? JSON.stringify(data)}`)
             }
           }
         } catch (e) {
