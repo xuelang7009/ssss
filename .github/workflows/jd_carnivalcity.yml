@@ -32,8 +32,6 @@ jobs:
         run: |
           node jd_carnivalcity.js
         env:
-          FRUIT_NOTIFY_CONTROL: ${{ secrets.FRUIT_NOTIFY_CONTROL }}
-          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
