@@ -227,6 +227,7 @@ async function joinTwoPeopleRun() {
 }
 //日常任务
 async function petTask() {
+	console.log($.getPetTaskConfigRes.datas)
   for (let item of $.getPetTaskConfigRes.datas) {
     const joinedCount = item.joinedCount || 0;
     if (item['receiveStatus'] === 'chance_full') {
