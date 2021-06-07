@@ -676,7 +676,7 @@ function feedPets(feedNum) {
             } else if (data.errorCode === 'time_error') {
               console.log('喂食失败：您的汪汪正在食用中,请稍后再喂食')
               message += `【喂食失败】您的汪汪正在食用中,请稍后再喂食\n`;
-            } else if (data.errorCode === 'food_insufficient' || data.errorCode === 'success' ) {
+            } else if (data.errorCode === 'food_insufficient') {
               console.log(`当前喂食${feedNum}g狗粮不够, 现为您降低一档次喂食\n`)
               if ((feedNum) === 80) {
                 feedNum = 40;
@@ -694,7 +694,9 @@ function feedPets(feedNum) {
                 console.log('您的狗粮已不足10g')
                 message += `【喂食失败】您的狗粮已不足10g\n`;
               }
-            } else {
+            } else if( data.errorCode === 'success'){
+				console.log(`其他状态${data.errorCode}`)
+			}else {
               console.log(`其他状态${data.errorCode}`)
             }
           }
